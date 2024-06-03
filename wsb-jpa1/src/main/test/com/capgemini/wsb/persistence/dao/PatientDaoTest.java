@@ -19,7 +19,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class PatientDaoTest
@@ -46,8 +45,7 @@ public class PatientDaoTest
 
     @Test
     @Transactional
-    public void shouldFindPatientsByDoctor()
-    {
+    public void shouldFindPatientsByDoctor() {
         // given
 
         // when
@@ -55,7 +53,7 @@ public class PatientDaoTest
 
         // then
         assertThat(patients.size()).isEqualTo(2L);
-        assertThat(patients.stream().map(x -> x.getFirstName()+" "+x.getLastName()).collect(Collectors.toList()))
+        assertThat(patients.stream().map(x -> x.getFirstName() + " " + x.getLastName()).collect(Collectors.toList()))
                 .containsExactlyInAnyOrder("Benek Bobo", "Zbigniew Kowalski");
     }
 

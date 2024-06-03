@@ -11,14 +11,23 @@ import java.util.List;
 
 @Repository
 public class DoctorDaoImpl extends AbstractDao<DoctorEntity, Long> implements DoctorDao {
+
     @Override
     public List<DoctorEntity> findBySpecialization(Specialization specialization) { // TODO - napisac query
-
-        return new ArrayList<>();
+        String jpqlQuery = "SELECT d FROM DoctorEntity d WHERE d.specialization = :specialization";
+        return entityManager.createQuery(jpqlQuery, DoctorEntity.class)
+                .setParameter("specialization",specialization)
+                .getResultList();
     }
 
     @Override
     public long countNumOfVisitsWithPatient(String docFirstName, String docLastName, String patientFirstName, String patientLastName) { // TODO - napisac query
-        return 1000;
+        String jpqlQuery = "SELECT COUNT(v) FROM VisitEntity v JOIN v.doctor d JOIN v.patient p WHERE d.firstName = :docFirstName AND d.lastName = :docLastName AND p.firstName = :patientFirstName AND p.lastName = :patientLastName";
+        return (long) entityManager.createQuery(jpqlQuery)
+                .setParameter("docFirstName", docFirstName)
+                .setParameter("docLastName", docLastName)
+                .setParameter("patientFirstName", patientFirstName)
+                .setParameter("patientLastName", patientLastName)
+                .getSingleResult();
     }
 }
