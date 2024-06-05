@@ -1,7 +1,7 @@
 insert into address (id, address_line1, address_line2, city, postal_code)
-            values (1, 'xx', 'yy', 'city', '62-030'),
-                   (2, 'zz', 'yy', 'city', '62-030'),
-                   (3, 'xx', 'yy', 'city', '62-030');
+            values (1, 'xx', 'yy', 'cityy', '62-030'),
+                   (2, 'zz', 'bb', 'ccity', '62-030'),
+                   (3, 'xz', 'dd', 'ciity', '62-030');
 
 insert into doctor (id, first_name, last_name, specialization, telephone_number, email, doctor_number)
             values (1, 'Jan', 'Kowalski', 'SURGEON', '1-123456789', 'doc1@example.com', '1'),
@@ -21,7 +21,7 @@ insert into patient (id, first_name, last_name, telephone_number, email, date_of
             values (1, 'Zbigniew', 'Kowalski', '3-123456789', 'qYUeh2@example.com', '2021-01-01', '123456788'),
                    (2, 'Krzysio', 'Nowak', '4-123456789', 'Nowak3@example.com', '2021-01-01', '123456789'),
                    (3, 'Kajetan', 'Beton', '5-523456789', 'Beton4@example.com', '2021-01-01', '123456780'),
-                   (4, 'Benek', 'Bobo', '5-223456789', 'qYUeh2@example.com', '2021-01-01', '123456781');
+                   (4, 'Benek', 'Bobo', '5-223456789', 'qYUeh23@example.com', '2021-01-01', '123456781');
 
 insert into patient_to_address (patient_id, address_id)
             values (1, 1), (2, 2), (3, 2), (4, 1);
@@ -31,7 +31,7 @@ insert into visit (id, description, time, doctor_id, patient_id)
                    (2, 'description2', '2021-11-01 13:00:00', 1, 2),
                    (3, 'description3', '2021-11-01 14:00:00', 3, 2),
                    (4, 'description4', '2021-11-01 15:00:00', 3, 3),
-                   (5, 'description5', '2021-01-01 16:00:00', 4, 1),
+                   (5, 'description5', '2021-01-01 16:00:00', 4, 4),
                    (6, 'description6', '2021-11-01 17:00:00', 5, 2),
                    (7, 'description7', '2021-11-01 18:00:00', 6, 2),
                    (8, 'description8', '2021-11-02 19:00:00', 6, 3),
@@ -39,7 +39,7 @@ insert into visit (id, description, time, doctor_id, patient_id)
                    (10, 'description10', '2021-11-04 12:00:00', 5, 2),
                    (11, 'description11', '2021-11-05 12:00:00', 7, 4),
                    (12, 'description12', '2021-11-06 12:00:00', 5, 3),
-                   (13, 'description13', '2021-01-07 12:00:00', 3, 1),
+                   (13, 'description13', '2021-01-07 12:00:00', 3, 3),
                    (14, 'description14', '2021-11-08 12:00:00', 5, 2),
                    (15, 'description15', '2021-11-09 12:00:00', 4, 2),
                    (16, 'description16', '2021-11-10 12:00:00', 3, 3);
@@ -53,7 +53,7 @@ insert into medical_treatment (id, description, type, visit_id)
                    (6, 'description', 'USG', 5),
                    (7, 'description', 'RTG', 6),
                    (8, 'description', 'RTG', 7),
-                   (9, 'description', 'EKG', 8),
+                   (9, 'description', 'USG', 8),
                    (10, 'description', 'USG', 8),
                    (11, 'description', 'RTG', 9),
                    (12, 'description', 'RTG', 10),
