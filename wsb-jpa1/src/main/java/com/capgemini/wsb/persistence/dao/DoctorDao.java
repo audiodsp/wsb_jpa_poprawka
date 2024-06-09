@@ -5,11 +5,11 @@ import com.capgemini.wsb.persistence.enums.Specialization;
 
 import java.util.List;
 
-public interface DoctorDao extends Dao<DoctorEntity, Long>
-{
+public interface DoctorDao extends Dao<DoctorEntity, Long> {
 
     /**
      * Finds doctors by theirs specialization
+     *
      * @param specialization
      * @return
      */
@@ -17,6 +17,7 @@ public interface DoctorDao extends Dao<DoctorEntity, Long>
 
     /**
      * Count number of visits of particular patient and doctors
+     *
      * @param docFirstName
      * @param docLastName
      * @param pateientFirstName
